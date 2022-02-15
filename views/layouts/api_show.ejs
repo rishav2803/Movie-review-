@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/show.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<!-- hello my name is RISHAV THALIYAL the best in  the world  -->
+
+<body>
+    <%-include('../partials/header.ejs')%>
+        <section class="movies_info">
+            <div class="movie-container">
+                <div class="grid-item">
+                    <div class="movie_img_container">
+                        <img src="<%=image%>/<%=data.poster_path%>" alt="">
+                    </div>
+                    <div class="movie_info">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Title:</strong></td>
+                                    <td>
+                                        <%= data.original_title %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> <strong>Genre:</strong></td>
+                                    <td>
+                                        <% for(const{name} of data.genres){%>
+                                        <%= name %>
+                                        <%}%>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Tagline:</strong></td>
+                                    <td>
+                                        <%= data.tagline %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Release Year:</strong></td>
+                                    <td>
+                                        <%= data.release_date %>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="grid-item-1">
+                    <strong>Sypnosis:</strong>
+                    <p>
+                        <%=data.overview %>
+                    </p><br>
+                    <hr><br>
+                    <% if(no_reviews==0) { %>
+                        <strong>No reviews yet please be first to write:<%- include('../partials/modal.ejs')  %> </strong>
+                        <% } %>
+                </div>
+                <%=console.log(video_url.results.length)%>
+            </div>
+        </section>
+        <script src="/css/js/home.js"></script>
+</body>
+
+</html>

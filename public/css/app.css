@@ -1,0 +1,37 @@
+.movie_img{
+    position: relative;
+}
+.movie_title{
+    font-weight:bold;
+    position: absolute;
+    color:white;
+    text-align: center;
+    left:2.5rem;
+    right:2.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    bottom:.5rem;
+}
+.movie_title:hover{
+    color:rgb(139, 134, 134);
+}
+
+.movie_des{
+    padding-bottom:1rem;
+    margin-bottom:1.5rem;
+    border-bottom:1px solid black;
+}
+.movie_container{
+    width:45rem;
+    height:45rem;
+    margin:auto;
+    margin-top:10rem;
+    border:1px solid white;
+}
+.user_img{
+    text-align: center;
+}
+@media(max-width: 600px) {
+    .movie_container{
+        width:40rem;
+    }
+}

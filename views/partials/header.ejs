@@ -1,0 +1,38 @@
+<!-- Here i will build the nav bar for movie site -->
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo">MovieCraze</h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active"><a href="/">Home</a></li>
+                    <li class="menu-list-item"><a href="#">Movies</a></li>
+                    <li class="menu-list-item"><a href="/create">Create</a></li>
+                    <li class="menu-list-item"><a href="#">Series</a></li>
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="../image/user.png" alt="">
+                <div class="profile-text-container">
+                    <% if(name){%>
+                        <span class="profile-text">
+                            <%=name.username%>
+                        </span>
+                        <i class="fas fa-caret-down"></i>
+                        <% } %>
+                            <% if(!name){ %>
+                                <span class="profile-text">Default</span>
+                                <i class="fas fa-caret-down"></i>
+                                <% } %>
+                </div>
+                <div class="profile-content">
+                    <li class="content-item"><a href="#">Profile</a></li>
+                    <li class="content-item"><a href="/user/logout">Log Out</a></li>
+                    <% if(!name) {%>
+                        <li class="content-item"><a href="/user/login">Log In</a></li>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
