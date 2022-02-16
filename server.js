@@ -26,23 +26,23 @@ app.use('/user',userRouter);
 
 // api Router
 
-app.use('/api',apiRouter);
+app.use('/',apiRouter);
 
-app.get('/',(req,res)=>{
-    getData();
-   async function getData(){
-        const data=await db.promise().query("select * from movies");
-        if(data)
-        {
-            console.log(data[0]);
-            res.render('layouts/test',{data:data[0],name:req.user});
-            res.status(200);
-        }else{
-            console.log(error);
-        }
+// app.get('/',(req,res)=>{
+//     getData();
+//    async function getData(){
+//         const data=await db.promise().query("select * from movies");
+//         if(data)
+//         {
+//             console.log(data[0]);
+//             res.render('layouts/test',{data:data[0],name:req.user});
+//             res.status(200);
+//         }else{
+//             console.log(error);
+//         }
        
-   }
-})
+//    }
+// })
 
 app.get('/:id/show',(req,res)=>{
     console.log(req.params.id);

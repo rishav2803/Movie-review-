@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,48 +10,43 @@
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
+
 <body>
-    <div class="navbar">
-        <div class="navbar-container">
-            <div class="logo-container">
-                <h1 class="logo">MovieCraze</h1>
-            </div>
-            <div class="menu-container">
-                <ul class="menu-list">
-                    <li class="menu-list-item active"><a href="#">Home</a></li>
-                    <li class="menu-list-item"><a href="#">Movies</a></li>
-                    <li class="menu-list-item"><a href="/create">Create</a></li>
-                    <li class="menu-list-item"><a href="#">Series</a></li>
-                </ul>
-            </div>
-            <div class="profile-container">
-                <img class="profile-picture" src="../image/user.png" alt="">
-            </div>
-        </div>
-    </div>
+    <%-include("../partials/header.ejs")%>
     <div class="container">
-        <!-- <div class="content-container">
-            <div class="featured-content"
-                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-1.jpg');">
-                <img class="featured-title" src="<%=data[0].movie_img%>" alt="">
-                <button class="featured-button">WATCH</button>
-            </div> -->
         <div class="swiper mySwiper ">
             <div class="swiper-wrapper">
                 <div class="swiper-slide container_1">
-                    <img src="<%=image%>/<%=data[0].backdrop_path%>" alt="">
+                    <img src="../image/NWH.jpg" alt="">
                     <div class="home-text">
-                        <h1><%=data[0].title%></h1>
+                        <h1>
+                            <%=data[0].title%>
+                        </h1>
                     </div>
                 </div>
                 <div class="swiper-slide container_1">
                     <img src="../image/slider1.jpg" alt="">
+                    <div class="home-text">
+                        <h1>
+                           The Avengers
+                        </h1>
+                    </div>
                 </div>
                 <div class="swiper-slide container_1">
                     <img src="../image/AI.jpg" alt="">
+                    <div class="home-text">
+                        <h1>
+                            Avengers:Infinity War
+                        </h1>
+                    </div>
                 </div>
                 <div class="swiper-slide container_1">
                     <img src="../image/A.jpg" alt="">
+                    <div class="home-text">
+                        <h1>
+                            Avengers:Endgame
+                        </h1>
+                    </div>
                 </div>
             </div>
             <div class="swiper-button-next"></div>
@@ -58,45 +54,80 @@
             <div class="swiper-pagination"></div>
         </div>
 
-        <section class="movies">
-        <h2 class="heading">Movies</h2>
-        <div class="carousel-wrapper">
-            <div class="owl-carousel owl-theme">
-                <% for(let i=0;i<10;i++){ %>
-                    <div class="item">
-                        <div class="movie-item">
-                            <img src="<%=image%>/<%=data[i].poster_path%>" class="image">
+        <section class="movies" id="jump">
+            <h2 class="heading">Movies</h2>
+            <div class="carousel-wrapper">
+                <div class="owl-carousel owl-theme">
+                    <% for(let i=0;i<10;i++){ %>
+                        <div class="item">
+                            <div class="movie-item">
+                                <img src="<%=image%>/<%=data[i].poster_path%>" class="image">
+                            </div>
+                            <div class="movie-content">
+                                <div class="title"><a href="#">
+                                        <a href="/api/<%=data[i].id%>/show">
+                                            <%=data[i].title%>
+                                        </a>
+                                    </a></div>
+                            </div>
                         </div>
-                        <div class="movie-content">
-                            <div class="title"><a href="#">
-                                   <a href="/api/<%=data[i].id%>/show"><%=data[i].title%></a>
-                                </a></div>
-                        </div>
-                    </div>
-                    <% }%>
+                        <% }%>
+                </div>
             </div>
-        </div>
+            <div class="carousel-wrapper">
+                <div class="owl-carousel owl-theme">
+                    <% for(let i=11;i<data.length;i++) {%>
+                        <div class="item">
+                            <div class="movie-item">
+                                <img src="<%=image%>/<%=data[i].poster_path%>" class="image">
+                            </div>
+                            <div class="movie-content">
+                                <div class="title"><a href="/api/<%=data[i].id%>/show">
+                                        <%=data[i].title%>
+                                    </a></div>
+                            </div>
+                        </div>
+                        <% }%>
+                </div>
+            </div>
         </section>
 
-        <section class="series">
+        <section class="series" id="jump2">
             <h2 class="series_heading">Series</h2>
-        <div class="carousel-wrapper">
-            <div class="owl-carousel owl-theme">
-                <% for(let i=11;i<data.length;i++) {%>
-                    <div class="item">
-                        <div class="movie-item">
-                            <img src="<%=image%>/<%=data[i].poster_path%>" class="image">
+            <div class="carousel-wrapper">
+                <div class="owl-carousel owl-theme">
+                    <% for(let i=0;i<10;i++){ %>
+                        <div class="item">
+                            <div class="movie-item">
+                                <img src="<%=image%>/<%=tv[i].poster_path%>" class="image">
+                            </div>
+                            <div class="movie-content">
+                                <div class="title"><a href="#">
+                                        <a href="/api/<%=tv[i].id%>/show">
+                                            <%=tv[i].name%>
+                                        </a>
+                                    </a></div>
+                            </div>
                         </div>
-                        <div class="movie-content">
-                            <div class="title"><a href="#">
-                                    <%=data[i].title%>
-                                </a></div>
-                        </div>
-                    </div>
-                    <% }%>
+                        <% }%>
+                </div>
             </div>
-        </div>
-
+            <div class="carousel-wrapper">
+                <div class="owl-carousel owl-theme">
+                    <% for(let i=11;i<data.length;i++) {%>
+                        <div class="item">
+                            <div class="movie-item">
+                                <img src="<%=image%>/<%=tv[i].poster_path%>" class="image">
+                            </div>
+                            <div class="movie-content">
+                                <div class="title"><a href="#">
+                                        <%=tv[i].name%>
+                                    </a></div>
+                            </div>
+                        </div>
+                        <% }%>
+                </div>
+            </div>
         </section>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="/css/js/home.js"></script>
@@ -109,7 +140,7 @@
                 // nav: true,
                 dots: false,
                 navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
-                autoplay:true,
+                autoplay: true,
                 responsive: {
 
                     0: {
