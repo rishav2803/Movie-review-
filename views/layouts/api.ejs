@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Design</title>
+    <title>MovieCraze</title>
     <%-include ('../partials/home_partial.ejs') %>
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <!-- Link Swiper's CSS -->
@@ -14,14 +14,14 @@
 <body>
     <%-include("../partials/header.ejs")%>
     <div class="container">
+       
         <div class="swiper mySwiper ">
             <div class="swiper-wrapper">
                 <div class="swiper-slide container_1">
                     <img src="../image/NWH.jpg" alt="">
                     <div class="home-text">
-                        <h1>
-                            <%=data[0].title%>
-                        </h1>
+                         <span>Marvel Universe</span>
+                        <h1>SpiderMan:<br>No way Home</h1>
                     </div>
                 </div>
                 <div class="swiper-slide container_1">
@@ -65,7 +65,7 @@
                             </div>
                             <div class="movie-content">
                                 <div class="title"><a href="#">
-                                        <a href="/api/<%=data[i].id%>/show">
+                                        <a href="/<%=data[i].id%>/show">
                                             <%=data[i].title%>
                                         </a>
                                     </a></div>
@@ -82,7 +82,7 @@
                                 <img src="<%=image%>/<%=data[i].poster_path%>" class="image">
                             </div>
                             <div class="movie-content">
-                                <div class="title"><a href="/api/<%=data[i].id%>/show">
+                                <div class="title"><a href="/<%=data[i].id%>/show">
                                         <%=data[i].title%>
                                     </a></div>
                             </div>
@@ -103,7 +103,7 @@
                             </div>
                             <div class="movie-content">
                                 <div class="title"><a href="#">
-                                        <a href="/api/<%=tv[i].id%>/show">
+                                        <a href="/<%=tv[i].id%>/show">
                                             <%=tv[i].name%>
                                         </a>
                                     </a></div>

@@ -21,7 +21,7 @@ router.get('/',(req,res)=>{
     }
 });
 
-router.get('/api/:id/show',(req,res)=>{
+router.get('/:id/show',(req,res)=>{
     getData();
     async function getData(){
         try{

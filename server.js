@@ -8,6 +8,7 @@ const session=require('express-session');
 const flash=require('express-flash');
 const axios=require('axios').default;
 
+// set our view engine
 app.set('view engine','ejs');
 
 app.use(express.urlencoded({extended:false}));
@@ -44,23 +45,23 @@ app.use('/',apiRouter);
 //    }
 // })
 
-app.get('/:id/show',(req,res)=>{
-    console.log(req.params.id);
-  
-    let query="select * from reviews inner join movies where movie_id=id or id=?"
-        db.query(query,[req.params.id,req.params.id],(err,result)=>{
-           if (err) console.log(`Errror is ${err}`);
-           if(result.length!=0)
-                res.render('layouts/show',{data:result[0],review:result,name:req.user})
-            else
-            query="select * from movies where id=?"
-              db.query(query,[req.params.id],(err,result2)=>{
-                  if(err) throw err;
-                res.render('layouts/show',{data:result2[0],name:req.user,no_reviews:0})
-              })
-        })
+// app.get('/:id/show',(req,res)=>{
+//     console.log(req.params.id);
+//     const movie_id=req.params.id;
+//     let query="select * from  movies inner join reviews where movie_id=id or id=?"
+//         db.query(query,[movie_id,movie_id],(err,result)=>{
+//            if (err) console.log(`Errror is ${err}`);
+//            if(result.length!=0)
+//                 res.render('layouts/show',{data:result[0],review:result,name:req.user})
+//             else
+//             query="select * from movies where id=?"
+//               db.query(query,[movie_id],(err,result2)=>{
+//                   if(err) throw err;
+//                 res.render('layouts/show',{data:result2[0],name:req.user,no_reviews:0})
+//               })
+//         })
 
-})
+// })
 
 app.get('/:id/test',(req,res)=>{
     const query="select * from reviews where movie_id=?"

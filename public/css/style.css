@@ -20,6 +20,21 @@ body {
   background: rgb(0,0,0,0.8);
 }
 
+.home-text{
+  z-index:1000;
+  padding:0 150px;
+}
+.home-text h1{
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:1rem;
+
+}
+.home-text span{
+  color:#151515;
+  text-transform: uppercase;
+}
+
 .navbar-container {
   display: flex;
   align-items: center;
@@ -138,7 +153,6 @@ body {
   width: 270px;
   height: 100%;
   object-fit: cover;
-  /* border-radius: 20px; */
   transition: 0.5s all ease-in-out;
 }
 

@@ -23,15 +23,11 @@
 .modal-content{
     background-color:#f4f4f4;
     width:40%;
-    margin:10% auto;
-    height:60%;
+    margin:5% auto;
+    height:70%;
     box-shadow:0 4px 8px rgba(0,0,0,0.2);
 }
-.radios-label{
-    display:flex;
-    justify-content: space-between;
-    margin-bottom:2.5rem;
-}
+
 .closeButton{
     color:rgb(95, 94, 94);
     float:right;
@@ -56,24 +52,57 @@
     margin-bottom:.8rem;
 }
 input[type=radio]{
-    margin-left:1.5rem
+    margin-left:1rem;
+    margin-top:1rem;
 }
 p{
     font-weight: bold;
     margin-left:1rem;
 }
-.movies_modal{
-    display:flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-around;
+.acting{
+    display: grid;
+    position: relative;
+    grid-template-columns: 220px  auto;
 }
-/* textarea{
+.music{
+    display: grid;
+    grid-template-columns: 220px  auto;
+}
+.cine{
+    display: grid;
+    grid-template-columns: 220px  auto;
+}
+.storyline{
+    display: grid;
+    grid-template-columns: 220px  auto;
+}
+.comments{
+    display: grid;
+    grid-template-columns: 220px  auto;
+}
+.film{
+    display: grid;
+    grid-template-columns: 220px  auto;
+}
+.rating_name{
+    margin:2rem;
+}
+
+.movies_modal .rating_name .acting .a{
+    transform: translate(0,32px);
+}
+
+.ratings{
+    display:grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+textarea{
+    
+    resize: none;
+    border-radius: 6px;
+}
+.form-group {
     margin:1rem;
-    float:right
-} */
-.form-group button{
-    margin-top:1rem;
 }
 
 
