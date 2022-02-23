@@ -106,11 +106,36 @@ app.post('/create',(req,res)=>{
 }); 
 
 app.post('/:id/post',(req,res)=>{
-    const{acting,music,cinema,storyline,film}=req.body;
-    const average=(parseInt(acting) +parseInt(music) + parseInt(cinema) + parseInt(storyline) + parseInt(film))/5;
-    const query="insert into "
-    db.query()
-    res.redirect(`/api/${req.params.id}/show`)
+    const{acting,music,cinematography,storyline,film,confirmation}=req.body;
+    // const average=(parseInt(acting) +parseInt(music) + parseInt(cinema) + parseInt(storyline) + parseInt(film))/5;
+    // const query="insert into "
+    // db.query()
+    if(req.user)
+    {
+    const result=(parseInt(acting)+parseInt(music)+parseInt(cinematography)+parseInt(film)+parseInt(storyline))/5;
+    const queryArr=
+        [
+        confirmation,
+        result,
+        req.user.id,
+        acting,
+        music,
+        cinematography,
+        storyline,
+        film,
+        req.params.id
+    ]
+    const query="insert into reviews(review,totalRating,user_id,acting,music,cinematography,storyline,filmography,movie_id)values(?,?,?,?,?,?,?,?,?)"
+    db.query(query,queryArr,(err,result)=>{
+        if(err) throw err;
+        res.render(`/${req.params.id}/show`);
+        console.log(result.affectedRows());
+    })
+    res.redirect(`/${req.params.id}/show`);
+    }
+    else{
+        res.redirect('/user/login');
+    }
 })
 const portNumber=5000;
 app.listen(portNumber,()=>{console.log(`Listening on port ${portNumber}`)});

@@ -32,8 +32,8 @@
                                     <td> <strong>Genre:</strong></td>
                                     <td>
                                         <% for(const{name} of data.genres){%>
-                                        <%= name %>
-                                        <%}%>
+                                            <%= name %>
+                                                <%}%>
                                     </td>
                                 </tr>
                                 <tr>
@@ -53,16 +53,85 @@
                     </div>
                 </div>
                 <div class="grid-item-1">
-                    <strong>Sypnosis:</strong>
-                    <p>
-                        <%=data.overview %>
-                    </p><br>
-                    <hr><br>
-                    <% if(no_reviews==0) { %>
-                        <strong>No reviews yet please be first to write:<%- include('../partials/modal.ejs')  %> </strong>
-                        <% } %>
+                    <div class="description_box">
+                        <strong>Sypnosis:</strong><br><br>
+                        <b>
+                            <%=data.overview %>
+                        </br><br>
+                    </div>
+                    <div class="review_container">
+                        <div class="box_header">
+                            <h3>Reviews</h3>
+                            <%if(no_reviews!=0){%>{
+                            <%- include('../partials/modal.ejs') %>
+                            <% } %>
+                        </div>
+                        <div class="box_divider"></div>
+                        <%console.log(review)%>
+                        <% if(review){%>
+                        <div class="review_box">
+                            <div class="user_box">
+                                <div class="user_info">
+                                    <%if(review){%>
+                                    <div class="user_image">
+                                            <img src="../image/user.png" alt="" class="avatar">
+                                    </div>
+                                    <div class="user_name">
+                                        <b><%=review.username%></b>
+                                    </div>
+                                </div> 
+                                <% } %>   
+                            </div>
+                            <div class="box_body">
+                                <div class="comments_box">
+                                    <i>
+                                        <%=review.review%>
+                                    </i>
+                                </div>
+                                <div class="ratings_box">
+                                    <div class="ratings_box_header">
+                                        <b>
+                                            Overall
+                                            <span class="pull-right"><%=review.totalRating%>.0</span>
+                                        </b>
+                                    </div>
+                                    <div class="ratings_box_body">
+                                        <div class="list_rating">
+                                            <div>
+                                                Acitng
+                                                <span class="pull-right"><%=review.acting%>.0</span>
+                                            </div>
+                                            <div>
+                                                Music
+                                                <span class="pull-right"><%=review.music%>.0</span>
+                                            </div>
+                                            <div>
+                                                Cinematography
+                                                <span class="pull-right"><%=review.cinematography%>.0</span>
+                                            </div>
+                                            <div>
+                                                Storyline
+                                                <span class="pull-right"><%=review.storyline%>.0</span>
+
+                                            </div>
+                                            <div>
+                                                Filmography
+                                                <span class="pull-right"><%=review.filmography%>.0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                            <% if(!review) { %>
+                                <div class="ratings_box_body">
+                                    <i>There have been no review submitted.</i><%- include('../partials/modal.ejs')  %> 
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
                 </div>
-                <%=console.log(video_url.results.length)%>
+                <%=console.log(user_id)%>
             </div>
         </section>
         <script src="/css/js/home.js"></script>
