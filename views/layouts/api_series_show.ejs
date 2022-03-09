@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Series</title>
     <link rel="stylesheet" href="/css/show.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -24,28 +23,14 @@
                                 <tr>
                                     <td><strong>Title:</strong></td>
                                     <td>
-                                        <%= data.title %>
+                                        <%= data.original_name %>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td> <strong>Genre:</strong></td>
-                                    <td>
-                                        <%=console.log(data.genres[0])%>
-                                        <% for(const{name} of data.genres){%>
-                                            <%= name %>
-                                                <%}%>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Tagline:</strong></td>
-                                    <td>
-                                        <%= data.tagline %>
-                                    </td>
-                                </tr>
                                 <tr>
                                     <td><strong>Release Year:</strong></td>
                                     <td>
-                                        <%= data.release_date %>
+                                        <%= data.first_air_date%>
                                     </td>
                                 </tr>
                             </tbody>
