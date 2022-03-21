@@ -9,51 +9,14 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
 </head>
 
 <body>
     <%-include("../partials/header.ejs")%>
     <div class="container">
-       
-        <div class="swiper mySwiper ">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide container_1">
-                    <img src="../image/NWH.jpg" alt="">
-                    <div class="home-text">
-                         <span>Marvel Universe</span>
-                        <h1>SpiderMan:<br>No way Home</h1>
-                    </div>
-                </div>
-                <div class="swiper-slide container_1">
-                    <img src="../image/slider1.jpg" alt="">
-                    <div class="home-text">
-                        <h1>
-                           The Avengers
-                        </h1>
-                    </div>
-                </div>
-                <div class="swiper-slide container_1">
-                    <img src="../image/AI.jpg" alt="">
-                    <div class="home-text">
-                        <h1>
-                            Avengers:Infinity War
-                        </h1>
-                    </div>
-                </div>
-                <div class="swiper-slide container_1">
-                    <img src="../image/A.jpg" alt="">
-                    <div class="home-text">
-                        <h1>
-                            Avengers:Endgame
-                        </h1>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-        </div>
-
+        <%-include('../partials/carousel.ejs')%>
         <section class="movies" id="jump">
             <h2 class="heading">Movies</h2>
             <div class="carousel-wrapper">
@@ -82,14 +45,17 @@
                                 <img src="<%=image%>/<%=data[i].poster_path%>" class="image">
                             </div>
                             <div class="movie-content">
-                                <div class="title"><a href="/<%=data[i].id%>/movie/show">
+                                <div class="title">
+                                    <a href="/<%=data[i].id%>/movie/show">
                                         <%=data[i].title%>
-                                    </a></div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <% }%>
                 </div>
             </div>
+         
         </section>
 
         <section class="series" id="jump2">
@@ -102,10 +68,12 @@
                                 <img src="<%=image%>/<%=tv[i].poster_path%>" class="image">
                             </div>
                             <div class="movie-content">
-                                <div class="title"><a href="#">
+                                <!-- <div class="star">
+                                    <i class="fa fa-star"></i><span>7.4</span>
+                                </div> -->
+                                <div class="title">
                                         <a href="/<%=tv[i].id%>/series/show">
                                             <%=tv[i].name%>
-                                        </a>
                                     </a></div>
                             </div>
                         </div>
@@ -129,6 +97,7 @@
                 </div>
             </div>
         </section>
+        <%-include('../partials/footer.ejs')%>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="/css/js/home.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -137,10 +106,10 @@
         <script>
             $('.owl-carousel').owlCarousel({
                 margin: 15,
-                // nav: true,
+                nav: true,
                 dots: false,
-                navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
-                autoplay: true,
+                navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+                autoplay: false,
                 responsive: {
 
                     0: {

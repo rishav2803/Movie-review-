@@ -1,0 +1,156 @@
+.modal-button{
+    color:#176093;
+    cursor: pointer;
+}
+.modal-button :hover{
+    color:rgb(121, 121, 235);
+}
+.modal{
+    display: none;
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    z-index: 100001;
+    overflow:hidden;
+    background-color:rgba(0,0,0,0.75);
+    /* transition:all 1.5s ease-in-out; */
+}
+.modal.active{
+    display: block;
+}
+.modal-content{
+    position: fixed;
+    background-color:#f4f4f4;
+    top:5vh;
+    border-radius:14px;
+    max-width:40%;
+    left:50%;
+    z-index:100002;
+    box-shadow:0 2px 8px rgba(0,0,0,0.25);
+    animation: slide-down 300ms ease-out forwards;
+}
+.fa-star{
+    font-size:18px;
+}
+
+@keyframes slide-down {
+    from{
+        opacity:0;
+        transform: translateY(0);
+    }
+    to{
+        opacity:1;
+        transform: translateY(4rem);
+    }
+}
+
+
+.closeButton{
+    color:rgb(95, 94, 94);
+    float:right;
+    padding:1rem;
+    font-size:45px;
+}
+.closeButton:hover,.closeButton:focus{
+    color:#000;
+    cursor:pointer;
+    text-decoration:none;
+}
+.modal-title{
+    font-size:x-large;
+    font-weight:bold;
+    padding:1.5rem;
+    /* background-color: #746f6f; */
+}
+.modal-rating{
+    margin:1rem;
+}
+.form-group{
+    margin-bottom:.8rem;
+}
+input[type=radio]{
+    display: none;
+}
+ul li{
+    display: inline-block;
+    list-style: none;
+    
+}
+ul li{
+    transition: all 100ms linear;
+}
+ul li:hover{
+    color:gold;
+    cursor: pointer;
+}
+ul li.active,ul li.secondary-active{
+    color:gold;
+    /* opacity: 0; */
+}
+.test.active{
+    color:gold;
+}
+ul{
+    text-align: center  ;
+}
+ul li{
+    margin:0 .5rem;
+}
+p{
+    font-weight: bold;
+    margin-left:1rem;
+}
+textarea{ 
+  width: 95%;
+  height: 90px;
+  margin-top:.5rem;
+  margin-left:16px;
+  padding: 9px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  overflow: hidden;
+}
+
+.form-group {
+    margin:1rem;
+}
+
+.footer{ 
+    border:1px solid rgba(0,0,0,0.14);
+    margin-bottom:.5rem;
+    float:right;
+    margin-right:1rem;
+}
+
+.button{
+    font:inherit;
+    border-radius:6px;
+    border:1px solid #4f005f;
+    background:#4f005f;
+    color:white;
+    padding:0.25rem 1rem;
+    cursor:pointer;
+}
+
+.button:hover,.button:active{
+    background:#741188;
+    border-color:#741188;
+}
+.button:focus{
+    outline:none;
+}
+@media(min-width:768px){
+    .modal-content{
+        width:40rem;
+        left:calc(50% - 20rem);
+    }
+}
+
+
+

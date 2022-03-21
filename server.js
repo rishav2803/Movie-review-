@@ -129,9 +129,9 @@ app.post('/:id/post',(req,res)=>{
     db.query(query,queryArr,(err,result)=>{
         if(err) throw err;
         res.render(`/${req.params.id}/show`);
-        console.log(result.affectedRows());
+        console.log(result.affectedRows);
     })
-    res.redirect(`/${req.params.id}/show`);
+    res.redirect(`/${req.params.id}/movie/show`);
     }
     else{
         res.redirect('/user/login');

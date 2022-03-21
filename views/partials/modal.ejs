@@ -15,7 +15,12 @@
         <div class="modal-content">
             <span class="closeButton">&times;</span>
             <header class="modal-title">
-                Hello
+                <%if(data.title){%>
+                <%=data.title%>
+                <%}%>
+                <%if(!data.title){%>
+                <%=data.original_name%>
+                <%}%>
             </header>
         <form action="/<%=data.id%>/post" method="post"  id="review">
             <div class="movies_modal">
@@ -46,7 +51,6 @@
                         </div>
                     </div>
                         <div class="music">
-
                             <p>Music</p>
                             <div class="ratings">
                                 <div class="rating_one">

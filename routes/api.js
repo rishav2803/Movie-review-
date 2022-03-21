@@ -46,7 +46,7 @@ router.get('/:id/movie/show', (req, res) => {
                         youtube: YOUTUBE_URL,
                         video_url: video.data,
                         user_id: req.user,
-                        review:queryRes[0]
+                        review:queryRes
                     }
                 );
             })
@@ -73,7 +73,7 @@ router.get('/:id/series/show',(req,res)=>{
                                 name: req.user,
                                 youtube: YOUTUBE_URL,
                                 user_id: req.user,
-                                review:queryRes[0]
+                                review:queryRes
                             }
                         );
                     })

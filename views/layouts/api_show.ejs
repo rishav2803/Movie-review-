@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Movies</title>
     <link rel="stylesheet" href="/css/show.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
 </head>
 
 <body>
     <%-include('../partials/header.ejs')%>
         <section class="movies_info">
             <div class="movie-container">
-                <div class="grid-item">
+                <div class="grid-item span-2">
                     <div class="movie_img_container">
                         <img src="<%=image%>/<%=data.poster_path%>" alt="">
                     </div>
@@ -31,9 +33,9 @@
                                     <td> <strong>Genre:</strong></td>
                                     <td>
                                         <%=console.log(data.genres[0])%>
-                                        <% for(const{name} of data.genres){%>
-                                            <%= name %>
-                                                <%}%>
+                                            <% for(const{name} of data.genres){%>
+                                                <%= name %>
+                                                    <%}%>
                                     </td>
                                 </tr>
                                 <tr>
@@ -52,86 +54,104 @@
                         </table>
                     </div>
                 </div>
-                <div class="grid-item-1">
+                <div class="grid-item-1 ">
                     <div class="description_box">
                         <strong>Sypnosis:</strong><br><br>
                         <b>
                             <%=data.overview %>
-                        </br><br>
+                                </br><br>
                     </div>
-                    <div class="review_container">
+                    <div class="review_container ">
                         <div class="box_header">
                             <h3>Reviews</h3>
                             <%if(review){%>
-                            <%- include('../partials/modal.ejs') %>
-                            <% } %>
+                                <%- include('../partials/modal.ejs') %>
+                                    <% } %>
                         </div>
                         <div class="box_divider"></div>
-                        <%console.log(review)%>
-                        <% if(review){%>
-                        <div class="review_box">
-                            <div class="user_box">
-                                <div class="user_info">
-                                    <%if(review){%>
-                                    <div class="user_image">
-                                            <img src="../image/user.png" alt="" class="avatar">
+                        <% for(i=0;i<=0;i++){%>
+                            <% if(review[i]){%>
+                                <div class="review_box">
+                                    <div class="user_box">
+                                        <div class="user_info">
+                                            <%if(review[i]){%>
+                                                <div class="user_image">
+                                                    <i class="fa fa-user  "></i>
+                                                </div>
+                                                <div class="user_name">
+                                                    <b>
+                                                        <%=review[i].username%>
+                                                    </b>
+                                                </div>
+                                                <% } %>
+                                        </div>
                                     </div>
-                                    <div class="user_name">
-                                        <b><%=review.username%></b>
-                                    </div>
-                                </div> 
-                                <% } %>   
-                            </div>
-                            <div class="box_body">
-                                <div class="comments_box">
-                                    <i>
-                                        <%=review.review%>
-                                    </i>
-                                </div>
-                                <div class="ratings_box">
-                                    <div class="ratings_box_header">
-                                        <b>
-                                            Overall
-                                            <span class="pull-right"><%=review.totalRating%></span>
-                                        </b>
-                                    </div>
-                                    <div class="ratings_box_body">
-                                        <div class="list_rating">
-                                            <div>
-                                                Acitng
-                                                <span class="pull-right"><%=review.acting%>.0</span>
+                                    <div class="box_body">
+                                        <div class="comments_box">
+                                            <i>
+                                                <%=review[i].review%>
+                                            </i>
+                                        </div>
+                                        <div class="ratings_box">
+                                            <div class="ratings_box_header">
+                                                <b>
+                                                    Overall
+                                                    <span class="pull-right">
+                                                        <%=review[i].totalRating%><i class="fa fa-star-o"></i>
+                                                    </span>
+                                                </b>
                                             </div>
-                                            <div>
-                                                Music
-                                                <span class="pull-right"><%=review.music%>.0</span>
-                                            </div>
-                                            <div>
-                                                Cinematography
-                                                <span class="pull-right"><%=review.cinematography%>.0</span>
-                                            </div>
-                                            <div>
-                                                Storyline
-                                                <span class="pull-right"><%=review.storyline%>.0</span>
+                                            <div class="ratings_box_body">
+                                                <div class="list_rating">
+                                                    <div>
+                                                        Acitng
+                                                        <span class="pull-right">
+                                                            <%=review[i].acting%>.0
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        Music
+                                                        <span class="pull-right">
+                                                            <%=review[i].music%>.0
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        Cinematography
+                                                        <span class="pull-right">
+                                                            <%=review[i].cinematography%>.0
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        Storyline
+                                                        <span class="pull-right">
+                                                            <%=review[i].storyline%>.0
+                                                        </span>
 
-                                            </div>
-                                            <div>
-                                                Filmography
-                                                <span class="pull-right"><%=review.filmography%>.0</span>
+                                                    </div>
+                                                    <div>
+                                                        Filmography
+                                                        <span class="pull-right">
+                                                            <%=review[i].filmography%>.0
+                                                        </span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="box__footer">
+                                        <a href="#">View all</a>
+                                    </div>
+                                    <% } %>
+                                        <% if(!review[i]) { %>
+                                            <div class="ratings_box_body">
+                                                <i>There have been no review submitted.</i>
+                                                <%- include('../partials/modal.ejs') %>
+                                            </div>
+                                        <% } %>
                                 </div>
-                            </div>
-                            <% } %>
-                            <% if(!review) { %>
-                                <div class="ratings_box_body">
-                                    <i>There have been no review submitted.</i><%- include('../partials/modal.ejs')  %> 
-                                </div>
-                            <% } %>
-                        </div>
+                                <% } %>
                     </div>
                 </div>
-                <%=console.log(user_id)%>
             </div>
         </section>
         <script src="/css/js/home.js"></script>
