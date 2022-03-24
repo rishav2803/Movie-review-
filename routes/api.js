@@ -73,7 +73,11 @@ router.get('/:id/series/show',(req,res)=>{
                                 name: req.user,
                                 youtube: YOUTUBE_URL,
                                 user_id: req.user,
+<<<<<<< HEAD
                                 review:queryRes
+=======
+                                review:queryRes[0]
+>>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
                             }
                         );
                     })

@@ -33,9 +33,15 @@
                                     <td> <strong>Genre:</strong></td>
                                     <td>
                                         <%=console.log(data.genres[0])%>
+<<<<<<< HEAD
                                             <% for(const{name} of data.genres){%>
                                                 <%= name %>
                                                     <%}%>
+=======
+                                        <% for(const{name} of data.genres){%>
+                                            <%= name %>
+                                                <%}%>
+>>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
                                     </td>
                                 </tr>
                                 <tr>
@@ -65,8 +71,13 @@
                         <div class="box_header">
                             <h3>Reviews</h3>
                             <%if(review){%>
+<<<<<<< HEAD
                                 <%- include('../partials/modal.ejs') %>
                                     <% } %>
+=======
+                            <%- include('../partials/modal.ejs') %>
+                            <% } %>
+>>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
                         </div>
                         <div class="box_divider"></div>
                         <% for(i=0;i<review.length;i++){%>
@@ -86,6 +97,7 @@
                                                 <% } %>
                                         </div>
                                     </div>
+<<<<<<< HEAD
                                     <div class="box_body">
                                         <div class="comments_box">
                                             <i>
@@ -100,6 +112,32 @@
                                                         <%=review[i].totalRating%><i class="fa fa-star"></i>
                                                     </span>
                                                 </b>
+=======
+                                    <div class="user_name">
+                                        <b><%=review.username%></b>
+                                    </div>
+                                </div> 
+                                <% } %>   
+                            </div>
+                            <div class="box_body">
+                                <div class="comments_box">
+                                    <i>
+                                        <%=review.review%>
+                                    </i>
+                                </div>
+                                <div class="ratings_box">
+                                    <div class="ratings_box_header">
+                                        <b>
+                                            Overall
+                                            <span class="pull-right"><%=review.totalRating%></span>
+                                        </b>
+                                    </div>
+                                    <div class="ratings_box_body">
+                                        <div class="list_rating">
+                                            <div>
+                                                Acitng
+                                                <span class="pull-right"><%=review.acting%>.0</span>
+>>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
                                             </div>
                                             <div class="ratings_box_body">
                                                 <div class="list_rating">

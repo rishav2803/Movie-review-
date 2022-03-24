@@ -30,11 +30,19 @@ body {
 .menu-list-item a {
   position: relative;
 }
+<<<<<<< HEAD
 .menu-list-item a::after {
   content: " ";
   width: 0;
   height: 2px;
   background: red;
+=======
+.menu-list-item a::after{
+  content:" ";
+  width:0;
+  height:2px;
+  background:red;
+>>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
   position: absolute;
   bottom: -4px;
   left: 0;
