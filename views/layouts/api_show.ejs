@@ -69,7 +69,7 @@
                                     <% } %>
                         </div>
                         <div class="box_divider"></div>
-                        <% for(i=0;i<=0;i++){%>
+                        <% for(i=0;i<review.length;i++){%>
                             <% if(review[i]){%>
                                 <div class="review_box">
                                     <div class="user_box">
@@ -97,7 +97,7 @@
                                                 <b>
                                                     Overall
                                                     <span class="pull-right">
-                                                        <%=review[i].totalRating%><i class="fa fa-star-o"></i>
+                                                        <%=review[i].totalRating%><i class="fa fa-star"></i>
                                                     </span>
                                                 </b>
                                             </div>
@@ -106,32 +106,32 @@
                                                     <div>
                                                         Acitng
                                                         <span class="pull-right">
-                                                            <%=review[i].acting%>.0
+                                                            <%=review[i].acting%>.0<i class="fa fa-star"></i>
                                                         </span>
                                                     </div>
                                                     <div>
                                                         Music
                                                         <span class="pull-right">
-                                                            <%=review[i].music%>.0
+                                                            <%=review[i].music%>.0<i class="fa fa-star"></i>
                                                         </span>
                                                     </div>
                                                     <div>
                                                         Cinematography
                                                         <span class="pull-right">
-                                                            <%=review[i].cinematography%>.0
+                                                            <%=review[i].cinematography%>.0<i class="fa fa-star"></i>
                                                         </span>
                                                     </div>
                                                     <div>
                                                         Storyline
                                                         <span class="pull-right">
-                                                            <%=review[i].storyline%>.0
+                                                            <%=review[i].storyline%>.0<i class="fa fa-star"></i>
                                                         </span>
 
                                                     </div>
                                                     <div>
                                                         Filmography
                                                         <span class="pull-right">
-                                                            <%=review[i].filmography%>.0
+                                                            <%=review[i].filmography%>.0<i class="fa fa-star"></i>
                                                         </span>
                                                     </div>
                                                 </div>

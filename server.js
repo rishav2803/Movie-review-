@@ -128,8 +128,8 @@ app.post('/:id/post',(req,res)=>{
     const query="insert into reviews(review,totalRating,user_id,acting,music,cinematography,storyline,filmography,movie_id)values(?,?,?,?,?,?,?,?,?)"
     db.query(query,queryArr,(err,result)=>{
         if(err) throw err;
-        res.render(`/${req.params.id}/show`);
-        console.log(result.affectedRows);
+        // res.render(`/${req.params.id}/show`);
+        // console.log(result.affectedRows);
     })
     res.redirect(`/${req.params.id}/movie/show`);
     }
