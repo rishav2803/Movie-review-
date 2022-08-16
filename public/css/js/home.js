@@ -1,4 +1,3 @@
-console.log("Rishav Thapliyal is the best in the world ");
 const arrows = document.querySelectorAll(".arrow");
 const movieLists = document.querySelectorAll(".movie-list");
 

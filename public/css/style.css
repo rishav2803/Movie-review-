@@ -30,19 +30,17 @@ body {
 .menu-list-item a {
   position: relative;
 }
-<<<<<<< HEAD
 .menu-list-item a::after {
   content: " ";
   width: 0;
   height: 2px;
   background: red;
-=======
+}
 .menu-list-item a::after{
   content:" ";
   width:0;
   height:2px;
   background:red;
->>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -185,21 +183,12 @@ body {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: rgba(0, 0, 0, 0.5);
-  /* transition: transform 0.4s linear; */
+  transition: transform 0.4s linear;
 }
-/* .api_footer:hover{
-  transform: translateY(-64px);
-} */
-/* 
-.owl-prev {
-  position:absolute;
-  top:40%;
-  width:20px;
-  height:20px;
-  background: rgba(0, 0, 0, 0.3) !important;
-  right:100%;
-  font-size:3.5rem !important;
-} */
+.api_footer:hover{
+  cursor:pointer;
+  transform: translateY(-66%);
+}
 
 .owl-prev,
 .owl-next {

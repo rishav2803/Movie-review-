@@ -95,6 +95,7 @@ app.post('/:id/review/new',(req,res)=>{
 app.get('/create',(req,res)=>{
     res.render('layouts/new');
 });
+
 app.post('/create',(req,res)=>{
     const{title,genre,desc,movie,director,year}=req.body;
     const query="insert into movies(title,genre,director,release_year,description,movie_img)values(?,?,?,?,?,?)";
@@ -106,10 +107,9 @@ app.post('/create',(req,res)=>{
 }); 
 
 app.post('/:id/post',(req,res)=>{
+    // Destructring the incoming request body
     const{acting,music,cinematography,storyline,film,confirmation}=req.body;
-    // const average=(parseInt(acting) +parseInt(music) + parseInt(cinema) + parseInt(storyline) + parseInt(film))/5;
-    // const query="insert into "
-    // db.query()
+    // Checking if req.user is truthy 
     if(req.user)
     {
     const result=(parseInt(acting)+parseInt(music)+parseInt(cinematography)+parseInt(film)+parseInt(storyline))/5;
@@ -134,9 +134,11 @@ app.post('/:id/post',(req,res)=>{
     res.redirect(`/${req.params.id}/movie/show`);
     }
     else{
+        // If not truthy then redirect to the login page 
         res.redirect('/user/login');
     }
 })
+
 const portNumber=5000;
 app.listen(portNumber,()=>{console.log(`Listening on port ${portNumber}`)});
 

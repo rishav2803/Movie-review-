@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+// axios is used to making get request inside the app.get()
 const axios = require('axios');
 const db = require('../config/database');
 
+// Following is the things required  for using the API
 const API_KEY = "api_key=44ee4947e13dc94c0b86e95eee37e7ea";
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_URL = BASE_URL + "/discover/movie?sort_by=popularity.desc&" + API_KEY;
@@ -44,7 +46,7 @@ router.get('/:id/movie/show', (req, res) => {
                         name: req.user,
                         no_reviews: 0,
                         youtube: YOUTUBE_URL,
-                        video_url: video.data,
+                        video_url: video,
                         user_id: req.user,
                         review:queryRes
                     }
@@ -73,11 +75,7 @@ router.get('/:id/series/show',(req,res)=>{
                                 name: req.user,
                                 youtube: YOUTUBE_URL,
                                 user_id: req.user,
-<<<<<<< HEAD
-                                review:queryRes
-=======
                                 review:queryRes[0]
->>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
                             }
                         );
                     })

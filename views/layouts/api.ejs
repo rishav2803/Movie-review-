@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +8,22 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css">
         <!-- Link Swiper's CSS -->
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
-        type="text/css">
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
+            type="text/css">
 </head>
 
 <body>
+    <!-- This is for bringing the header parital  -->
     <%-include("../partials/header.ejs")%>
+
     <div class="container">
+        <!-- This is for the carousel partial  -->
         <%-include('../partials/carousel.ejs')%>
+
+        <!-- This is for the movies seciton  -->
         <section class="movies" id="jump">
             <h2 class="heading">Movies</h2>
+            <!-- Made use of carousel wrapper which is helps make carousel -->
             <div class="carousel-wrapper">
                 <div class="owl-carousel owl-theme">
                     <% for(let i=0;i<10;i++){ %>
@@ -45,13 +50,9 @@
                                 <img src="<%=image%>/<%=data[i].poster_path%>" class="image">
                             </div>
                             <div class="movie-content">
-<<<<<<< HEAD
                                 <div class="title">
                                     <a href="/<%=data[i].id%>/movie/show">
-=======
-                                <div class="title"><a href="/<%=data[i].id%>/movie/show">
->>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
-                                        <%=data[i].title%>
+                                            <%=data[i].title%>
                                     </a>
                                 </div>
                             </div>
@@ -59,9 +60,9 @@
                         <% }%>
                 </div>
             </div>
-         
         </section>
-
+        
+        <!-- This is for the series seciton  -->
         <section class="series" id="jump2">
             <h2 class="series_heading">Series</h2>
             <div class="carousel-wrapper">
@@ -72,17 +73,11 @@
                                 <img src="<%=image%>/<%=tv[i].poster_path%>" class="image">
                             </div>
                             <div class="movie-content">
-<<<<<<< HEAD
-                                <!-- <div class="star">
-                                    <i class="fa fa-star"></i><span>7.4</span>
-                                </div> -->
-                                <div class="title">
-=======
                                 <div class="title"><a href="#">
->>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
                                         <a href="/<%=tv[i].id%>/series/show">
                                             <%=tv[i].name%>
-                                    </a></div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <% }%>
@@ -105,12 +100,21 @@
                 </div>
             </div>
         </section>
+
+        <!-- This is the partial for the footer  -->
         <%-include('../partials/footer.ejs')%>
+
+        <!-- Bringing the swiper js -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Bringing the home js file which is used for the content showing and hiding and for implementing swiper -->
         <script src="/css/js/home.js"></script>
+        <!-- Bringing the jquery cdn -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bringing the owl carousel cdn  -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+        <!-- Owl carousel implementation -->
         <script>
             $('.owl-carousel').owlCarousel({
                 margin: 15,

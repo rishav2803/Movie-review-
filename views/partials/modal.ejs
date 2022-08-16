@@ -15,16 +15,12 @@
         <div class="modal-content">
             <span class="closeButton">&times;</span>
             <header class="modal-title">
-<<<<<<< HEAD
                 <%if(data.title){%>
                 <%=data.title%>
                 <%}%>
                 <%if(!data.title){%>
                 <%=data.original_name%>
                 <%}%>
-=======
-                Hello
->>>>>>> 1d959a614364fadac3de536bdf7e9a510fbe1546
             </header>
         <form action="/<%=data.id%>/post" method="post"  id="review">
             <div class="movies_modal">
@@ -136,7 +132,7 @@
                         </div>
                         <div class="comments">
                             <p>Comments</p>
-                            <textarea name="confirmation" id="" cols="70" rows="5" form="review"></textarea>
+                            <textarea name="confirmation" id="" cols="70" rows="5" form="review" maxlength="45"></textarea>
                         </div>
                 </div>
             </div>
