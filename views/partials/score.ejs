@@ -1,0 +1,24 @@
+<% let sum=0.0 %>
+
+<%for(let i=0;i<review.length;i++){%>
+    <% sum = sum+ parseFloat(review[i]?.totalRating); %>
+<% }%>
+
+
+
+<div class="avg_score_container">
+    <div class="avg_score">
+        <% if(review.length===0) { %>
+            <p>N/A</p>
+        <% } %>
+        <p><%= (sum/review.length).toFixed(1) %></p>
+    </div>
+    <div class="cont">
+    <div class="reco">
+        <p>Recommend by: <%= review.filter(r=>r.sentiment==="Positive").length %> </p>
+    </div>
+    <div class="no_reviews">
+        <p>Total Reviews: <%= review.length %></p>
+    </div>
+    </div>
+</div>

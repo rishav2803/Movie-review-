@@ -16,57 +16,57 @@
             <span class="closeButton">&times;</span>
             <header class="modal-title">
                 <%if(data.title){%>
-                <%=data.title%>
-                <%}%>
-                <%if(!data.title){%>
-                <%=data.original_name%>
-                <%}%>
+                    <%=data.title%>
+                        <%}%>
+                            <%if(!data.title){%>
+                                <%=data.original_name%>
+                                    <%}%>
             </header>
-        <form action="/<%=data.id%>/post" method="post"  id="review">
-            <div class="movies_modal">
-                <div class="rating_name">
-                    <div class="acting">
-                        <p class="a">Acting</p>
-                        <div class="ratings">
-                            <div class="rating_one">
-                                <p>1</p>
-                                <input type="radio" name="acting" value="1">
-                            </div>
-                            <div class="rating_two">
-                                <p>2</p>
-                                <input type="radio" name="acting" value="2">
-                            </div>
-                            <div class="raitng_three">
-                                <p>3</p>
-                                <input type="radio" name="acting" value="3">
-                            </div>
-                            <div class="rating_four">
-                                <p>4</p>
-                                <input type="radio" name="acting" value="4">
-                            </div>
-                            <div class="raitng_five">
-                                <p>5</p>
-                                <input type="radio" name="acting" value="5">
+            <form action="/<%=data.id%>/post" method="post" id="review">
+                <div class="movies_modal">
+                    <div class="rating_name">
+                        <div class="acting">
+                            <p class="a">Acting</p>
+                            <div class="ratings">
+                                <div class="rating_one">
+                                    <p>1</p>
+                                    <input type="radio" name="acting" value="1" required>
+                                </div>
+                                <div class="rating_two">
+                                    <p>2</p>
+                                    <input type="radio" name="acting" value="2" required>
+                                </div>
+                                <div class="raitng_three">
+                                    <p>3</p>
+                                    <input type="radio" name="acting" value="3" required>
+                                </div>
+                                <div class="rating_four">
+                                    <p>4</p>
+                                    <input type="radio" name="acting" value="4" required>
+                                </div>
+                                <div class="raitng_five">
+                                    <p>5</p>
+                                    <input type="radio" name="acting" value="5" required>
+                                </div>
                             </div>
                         </div>
-                    </div>
                         <div class="music">
                             <p>Music</p>
                             <div class="ratings">
                                 <div class="rating_one">
-                                    <input type="radio" name="music" value="1">
+                                    <input type="radio" name="music" value="1" required>
                                 </div>
                                 <div class="rating_two">
-                                    <input type="radio" name="music" value="2">
+                                    <input type="radio" name="music" value="2" required>
                                 </div>
                                 <div class="raitng_three">
-                                    <input type="radio" name="music" value="3">
+                                    <input type="radio" name="music" value="3" required>
                                 </div>
                                 <div class="rating_four">
-                                    <input type="radio" name="music" value="4">
+                                    <input type="radio" name="music" value="4" required>
                                 </div>
                                 <div class="raitng_five">
-                                    <input type="radio" name="music" value="5">
+                                    <input type="radio" name="music" value="5" required>
                                 </div>
                             </div>
                         </div>
@@ -74,10 +74,10 @@
                             <p>Cinematography</p>
                             <div class="ratings">
                                 <div class="rating_one">
-                                    <input type="radio" name="cinematography" value="1">
+                                    <input type="radio" name="cinematography" value="1" required>
                                 </div>
                                 <div class="rating_two">
-                                    <input type="radio" name="cinematography" value="2">
+                                    <input type="radio" name="cinematography" value="2" required>
                                 </div>
                                 <div class="raitng_three">
                                     <input type="radio" name="cinematography" value="3">
@@ -94,7 +94,7 @@
                             <p>Storyline</p>
                             <div class="ratings">
                                 <div class="rating_one">
-                                    <input type="radio" name="storyline" value="1">
+                                    <input type="radio" name="storyline" value="1" required>
                                 </div>
                                 <div class="rating_two">
                                     <input type="radio" name="storyline" value="2">
@@ -114,7 +114,7 @@
                             <p>Filmography</p>
                             <div class="ratings">
                                 <div class="rating_one">
-                                    <input type="radio" name="film" value="1">
+                                    <input type="radio" name="film" value="1" required>
                                 </div>
                                 <div class="rating_two">
                                     <input type="radio" name="film" value="2">
@@ -132,14 +132,15 @@
                         </div>
                         <div class="comments">
                             <p>Comments</p>
-                            <textarea name="confirmation" id="" cols="70" rows="5" form="review" maxlength="45"></textarea>
+                            <textarea name="confirmation" id="" cols="70" rows="5" form="review"
+                                maxlength="45" required></textarea>
                         </div>
+                    </div>
                 </div>
-            </div>
-            <div class="footer">
-                <button class="button" type="submit">Submit</button>
-            </div>
-        </form>
+                <div class="footer">
+                    <button class="button" type="submit">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
     <script src="/css/js/modal.js"></script>

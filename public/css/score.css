@@ -1,0 +1,32 @@
+.avg_score_container {
+  display: flex;
+  padding-bottom: 1rem;
+  border-bottom: 2px dotted black;
+}
+.avg_score {
+  width: 76px;
+  background-color: #f66227;
+  height: 76px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 75px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+.avg_score p {
+  margin-left: 0;
+  color: white;
+}
+.cont {
+  margin-top: 0.2rem;
+}
+.reco {
+  margin-bottom: 0.2rem;
+}
+/* .no_reviews{ */
+/*     margin-top:1rem; */
+/* } */

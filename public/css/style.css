@@ -36,11 +36,11 @@ body {
   height: 2px;
   background: red;
 }
-.menu-list-item a::after{
-  content:" ";
-  width:0;
-  height:2px;
-  background:red;
+.menu-list-item a::after {
+  content: " ";
+  width: 0;
+  height: 2px;
+  background: red;
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -185,8 +185,8 @@ body {
   background: rgba(0, 0, 0, 0.5);
   transition: transform 0.4s linear;
 }
-.api_footer:hover{
-  cursor:pointer;
+.api_footer:hover {
+  cursor: pointer;
   transform: translateY(-66%);
 }
 
@@ -207,7 +207,8 @@ body {
 .owl-next {
   right: -50px;
 }
-.owl-prev:hover,.owl-next:hover {
+.owl-prev:hover,
+.owl-next:hover {
   background: rgba(0, 0, 0, 0) !important;
 }
 .movie-content {
@@ -344,12 +345,6 @@ body {
   object-position: center;
   z-index: -1;
 }
-
-/* .movie-list-item:hover .movie-list-item-title,
-.movie-list-item:hover .movie-list-item-desc,
-.movie-list-item:hover .movie-list-item-button {
-  opacity: 1;
-} */
 
 .movie-list-item-img {
   transition: all 1s ease-in-out;
